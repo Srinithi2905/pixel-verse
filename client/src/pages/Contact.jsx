@@ -1,76 +1,4 @@
-// import React, { useState } from "react";
-// import axios from "axios";
 
-// const Contact = () => {
-//   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-//   const [status, setStatus] = useState("");
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setStatus("Sending...");
-
-//     try {
-//       await axios.post("http://localhost:5000/api/email/send", formData);
-//       setStatus("Message sent successfully!");
-//       setFormData({ name: "", email: "", message: "" });
-//     } catch (error) {
-//       console.error("Error sending message:", error);
-//       setStatus("Failed to send message.");
-//     }
-//   };
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-black p-6">
-//       <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8 w-full max-w-md">
-//         <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Contact Us</h2>
-
-//         <input
-//           type="text"
-//           name="name"
-//           placeholder="Your Name"
-//           required
-//           value={formData.name}
-//           onChange={handleChange}
-//           className="w-full mb-4 p-3 border border-gray-300 rounded-md dark:bg-gray-700 dark:text-white"
-//         />
-
-//         <input
-//           type="email"
-//           name="email"
-//           placeholder="Your Email"
-//           required
-//           value={formData.email}
-//           onChange={handleChange}
-//           className="w-full mb-4 p-3 border border-gray-300 rounded-md dark:bg-gray-700 dark:text-white"
-//         />
-
-//         <textarea
-//           name="message"
-//           placeholder="Your Message"
-//           required
-//           value={formData.message}
-//           onChange={handleChange}
-//           className="w-full mb-4 p-3 border border-gray-300 rounded-md h-32 dark:bg-gray-700 dark:text-white"
-//         />
-
-//         <button
-//           type="submit"
-//           className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition"
-//         >
-//           Send Message
-//         </button>
-
-//         {status && <p className="mt-4 text-sm text-center text-gray-700 dark:text-gray-300">{status}</p>}
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Contact;
 import { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
@@ -88,7 +16,7 @@ export default function ContactPage() {
     setStatus("Sending...");
 
     try {
-      await axios.post("http://localhost:5000/api/email/send", formData);
+      await axios.post("https://pixel-verse-6lqr.onrender.com/api/email/send", formData);
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
